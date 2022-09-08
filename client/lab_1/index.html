@@ -3,31 +3,62 @@ and your hidden "head" tag
 and your "title" tag
 
 <html>
-  <head>
-    <title>Asher Harman's Labs For INST377</title>
-  </head>
+  <div class ="Wrapper">
+    <head>
+      <title>Asher Harman's Labs For INST377</title>
+      <style>
+      .row {
+        display: flex;
+      }
+      .column {
+        flex: 25%;
+        padding: 5px;
+      }
+      </style>
+    </head>
 
-  <body>
-    <h1>Asher Harman's Labs For INST377</h1>
-    <div>
-    <h2>albums</h2>
-    <ol>
-      <li>Again - YUI</li>
-      <li>Guren No Yumiya - Linked Horizon</li>
-      <li>Stand Proud - Jin Hashimoto</li>
-      <li>A Cruel Angel's Thesis - Yoko Takahasi</li>
-      <li>Screaming Eagales - Sabaton</li>
-    </ol>
+    <div class = "container">
+
+      <body>
+        <h1>Asher Harman's Labs For INST377</h1>
+        
+        <div class = "left">
+          <h2>albums</h2>
+          <ol>
+            <li>Again - YUI</li>
+            <li>Guren No Yumiya - Linked Horizon</li>
+            <li>Stand Proud - Jin Hashimoto</li>
+            <li>A Cruel Angel's Thesis - Yoko Takahasi</li>
+            <li>Screaming Eagales - Sabaton</li>
+          </ol>
+        </div>
+
+        <div class = right>
+          <h3>Image Carousel</h3>
+
+          <div class="row">
+            <div class="column">
+              <img src="images/mochi.png" width = '150' alt = 'A mochi ball in a bubble'>
+            </div>
+            <div class="column">
+              <img src="images/mochi.jpg" width = '150' alt = 'A mochi ball in a bubble'>
+            </div>
+            <div class="column">
+              <img src="images/mochi.gif" width = '150' alt = 'A mochi ball in a bubble'>
+            </div>
+            <div class="column">
+              <img src="images/mochi.svg" width = '150' alt = 'A mochi ball in a bubble'>
+            </div>
+          </div>
+        </div>
+
     </div>
-    <div>
-
-    <h3>Image Carousel</h3>
-    
-    <img src = 'images/mochi.jpg' width = '75' alt = 'A mochi ball in a bubbl'/>
+    <div class = "image_desc">
+      <p>Varies image types of a mochi</p>
     </div>
-
-    
-  </body>
+      
+    </body>
+  </div>
 </html>
 
 
