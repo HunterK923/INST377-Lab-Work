@@ -1,79 +1,36 @@
-include your HTML opening tags
-and your hidden "head" tag
-and your "title" tag
-
 <html>
-  <div class ="Wrapper">
-    <head>
+  <head>
+    <div class ="wrapper">
       <title>Asher Harman's Labs For INST377</title>
-      <style>
-      .row {
-        display: flex;
-      }
-      .column {
-        flex: 25%;
-        padding: 5px;
-      }
-      </style>
-    </head>
-
-    <div class = "container">
-
-      <body>
-        <h1>Asher Harman's Labs For INST377</h1>
-        
-        <div class = "left">
-          <h2>albums</h2>
-          <ol>
-            <li>Again - YUI</li>
-            <li>Guren No Yumiya - Linked Horizon</li>
-            <li>Stand Proud - Jin Hashimoto</li>
-            <li>A Cruel Angel's Thesis - Yoko Takahasi</li>
-            <li>Screaming Eagales - Sabaton</li>
-          </ol>
-        </div>
-
-        <div class = right>
-          <h3>Image Carousel</h3>
-
-          <div class="row">
-            <div class="column">
-              <img src="images/mochi.png" width = '150' alt = 'A mochi ball in a bubble'>
-            </div>
-            <div class="column">
-              <img src="images/mochi.jpg" width = '150' alt = 'A mochi ball in a bubble'>
-            </div>
-            <div class="column">
-              <img src="images/mochi.gif" width = '150' alt = 'A mochi ball in a bubble'>
-            </div>
-            <div class="column">
-              <img src="images/mochi.svg" width = '150' alt = 'A mochi ball in a bubble'>
-            </div>
-          </div>
-        </div>
-
     </div>
-    <div class = "image_desc">
-      <p>Varies image types of a mochi</p>
-    </div>
+  </head>
+  <div class = "container">
+    <body>
+      <h1>Asher Harman's Labs For INST377</h1>
+      <div class = "left">
+        <h2>Album Names</h2>
+        <ol>
+          <li>Again - YUI</li>
+          <li>Guren No Yumiya - Linked Horizon</li>
+          <li>Stand Proud - Jin Hashimoto</li>
+          <li>A Cruel Angel's Thesis - Yoko Takahasi</li>
+          <li>Screaming Eagales - Sabaton</li>
+        </ol>
+      </div>
+      <div class = right>
+        <h3>Image Carousel</h3>
+        <div class="row">
+          <img src="images/mochi.gif" width = '150' alt = 'A mochi ball in a bubble' float: left vertical-align: bottom>
+          <img src="images/mochi.png" width = '150' alt = 'A mochi ball in a bubble' float: left vertical-align: bottom>
+          <img src="images/mochi.jpg" width = '150' alt = 'A mochi ball in a bubble' float: left vertical-align: bottom>
+          <img src="images/mochi.svg" width = '75' alt = 'A mochi ball in a bubble' float: left vertical-align: bottom>
+        </div>
+        <div class = "image_desc">
+          <p>Varies image types of a mochi</p>
+        </div>
+      </div>
       
     </body>
   </div>
+  <p>Github Account: HunterK923 <a href = https://github.com/HunterK923>account link</a></p>
 </html>
-
-
-full-width wrapper div
-  header containing: YOUR NAME's Labs For INST377
-  container div
-      left div
-        sub-header saying "albums"
-        Your top 5 albums in an ordered list
-      right div (main div for the site)
-        sub-header saying "image carousel"
-          div to contain four images
-            four images of mochi from your readings, all square (they're four different image types!)
-          div to contain a description or text
-            description of images
-
-
-full-width page footer containing your github account name and a link to your gitHub account
