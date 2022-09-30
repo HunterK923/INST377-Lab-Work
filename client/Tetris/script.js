@@ -1,13 +1,10 @@
-// variables
+/* eslint-disable no-use-before-define */
 document.addEventListener('DOmContentLoaded', () => {
   const grid = document.querySelector('.grid');
-  const squares = Array.from(document.querySelectorAll('.grid div'));
+  let squares = Array.from(document.querySelectorAll('.grid div'));
   const scoreDisplay = document.querySelector('#score');
   const startBtn = document.querySelector('#start-button');
   const width = 10;
-  const nextRandom = 0;
-  let timerId;
-  const score = 0;
   // The Tetrominoes
   const lTetromino = [
     [1, width + 1, width * 2 + 1, 2],
@@ -49,8 +46,8 @@ document.addEventListener('DOmContentLoaded', () => {
   let currentPosition = 4;
   const currentRotation = 0;
 
-  const random = Math.floor(Math.random() * theTetrominoes.length);
-  let current = tehTetrominos[random][currentRotation];
+  let random = Math.floor(Math.random() * theTetrominoes.length);
+  let current = theTetrominoes[0][0];
 
   // draw the first rotation in the firest tetromino
   function draw() {
@@ -61,21 +58,20 @@ document.addEventListener('DOmContentLoaded', () => {
   function undraw() {
     current.forEach((index) => {
       squares[currentPosition + index].classList.remove('tetromino');
-      squares[currentPosition + index].style.backgroundColor = '';
     });
   }
 
-  // freeze function
-  function freeze() {
-    if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
-      current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
-      // start a new tetromino falling
-      tandom = Math.floor(Math.random() * theTetrominoes.length);
-      current = theTetrominoes[random][currentRotation];
-      currentPosition = 4;
-      draw();
+  // make the tetromino move down every second
+  timerId = setInterval(moveDown, 1000);
+
+  // assign function to key Codes
+  function control(e) {
+    if (e.keyCode === 37) {
+      moveLeft();
     }
   }
+
+  document.addEventListener('keyup', control);
 
   // move down
   function moveDown() {
@@ -85,6 +81,15 @@ document.addEventListener('DOmContentLoaded', () => {
     freeze();
   }
 
-  // make the tetromino move down every second
-  timerId = setInterval(moveDown, 1000);
+  // freeze function
+  function freeze() {
+    if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
+      current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
+      // start a new tetromino falling
+      random = Math.floor(Math.random() * theTetrominoes.length);
+      current = theTetrominoes[random][currentRotation];
+      currentPosition = 4;
+      draw();
+    }
+  }
 });
