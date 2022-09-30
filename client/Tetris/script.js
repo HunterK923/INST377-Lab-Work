@@ -1,11 +1,13 @@
 // variables
 document.addEventListener('DOmContentLoaded', () => {
   const grid = document.querySelector('.grid');
-  const squares = Array.from(document.querySelectorAll('.grid div'));
+  let squares = Array.from(document.querySelectorAll('.grid div'));
   const scoreDisplay = document.querySelector('#score');
-  const startBtn = document.querySelector('#start-button');
+  const startBtn= document.querySelector('#start-button');
   const width = 10;
-
+  let nextRandom=0;
+  let timerId;
+  let score = 0;
   // The Tetrominoes
   const lTetromino = [
     [1, width + 1, width * 2 + 1, 2],
@@ -45,7 +47,10 @@ document.addEventListener('DOmContentLoaded', () => {
   const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
 
   const currentPosition = 4;
-  const current = theTetrominoes[0][0];
+  const currentRotation = 0;
+
+  const random = Math.floor(Math.random() * theTetrominoes.length);
+  const current = tehTetrominos[random][currentRotation];
 
   // draw the first rotation in the firest tetromino
   function draw() {
@@ -53,4 +58,11 @@ document.addEventListener('DOmContentLoaded', () => {
       squares[currentPosition + index].classList.add('tetromino');
     });
   }
+  function undraw(){
+    current.forEach(index=>{
+      squares[currentPosition + index].classList.remove('tetromino');
+      squares[currentPosition + index].style.backgroundColor = '';
+    });
+  };
+
 });
