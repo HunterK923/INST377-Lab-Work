@@ -9,14 +9,6 @@ async function mainEvent() { // the async keyword means we can make API requests
     submitEvent.preventDefault(); // This prevents your page from going to http://localhost:3000/api even if your form still has an action set on it
     console.log('form submission'); // this is substituting for a "breakpoint"
 
-    /*
-      ## GET requests and Javascript
-        We would like to send our GET request so we can control what we do with the results
-        But this blocks us sending a query string by default - ?resto='' won't exist
-
-        Let's get those form results before sending off our GET request using the Fetch API
-    */
-
     // this is the preferred way to handle form data in JS in 2022
     const formData = new FormData(submitEvent.target); // get the data from the listener target
     const formProps = Object.fromEntries(formData); // Turn it into an object
@@ -34,22 +26,8 @@ async function mainEvent() { // the async keyword means we can make API requests
       // this is a basic GET request
       // It does not include any of your form values, though
     */
-    const results = await fetch(`/api/foodServicePG?${new URLSearchParams(formProps)}`);
-    // const results = await fetch('/api/foodServicePG');
-    /*
-   ## Get request with query parameters
-
-      const results = await fetch(`/api/foodServicePG?${new URLSearchParams(formProps)}`);
-
-      The above request uses "string interpolation"
-      to include an encoded version of your form values
-      It works because it has a ? in the string
-      Replace line 37 with it, and try it with a / instead to see what your server console says
-
-      You can check what you sent to your server in your GET request
-      By opening the "network" tab in your browser developer tools and looking at the "name" column
-      This will also show you how long it takes a request to resolve
-    */
+    const fetchQuery = new URLSearchParams(formProps);
+    const results = await fetch(`/api/foodServicePG?${fetchQuery}`);
 
     // This changes the response from the GET into data we can use - an "object"
     const arrayFromJson = await results.json();
