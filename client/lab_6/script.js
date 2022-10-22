@@ -20,9 +20,13 @@ function injectHTML(list) {
   console.log('fired injectHTML');
   const target = document.querySelector('#restraunt_list');
   target.innerHTML = '';
+
+  const listEl = document.createElement('ol');
+  target.appendChild(listEl);
   list.forEach(item => {
-    const str = `<li>${item.name} </li>`;
-    target.innerHTML += str;
+    const el = document.createElement('li');
+    el.innerText = item.name;
+    listEl.appendChild(el);
   });
   /*
   ## JS and HTML Injection
