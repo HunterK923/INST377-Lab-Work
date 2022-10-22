@@ -13,17 +13,12 @@ const router = express.Router();
   This is the main "router" for the server-side of your application.
   It listens for address requests - like 'http://your-app.heroku.com/api' - and sends a response.
   The response can be anything.
-
   In this file we have three demonstrations, an HTML page, a basic external API request, and a SQL request.
-
   For a long time, when we did a "get" request - asked for an address - JUST an HTML page would come back.
   Now, though, most clients are built of Javascript, which changes our route structure a lot.
-
   In this class, we separate our data routes and our content routes.
-
   Content is available at 'http://your-app.heroku.com/'
   Data is available at 'http://your-app.heroku.com/api'
-
   This is set up in server.js at about line 46, where it says `app.use(express.static(staticFolder));`
 */
 /* eslint-enable max-len */

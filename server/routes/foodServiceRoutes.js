@@ -4,14 +4,11 @@ import express from 'express';
 
 /*
   ## What is this file?
-
   This is a route handling file for our demo data.
   It "imports" other modules - like Express, above, or our own work below.
   Those other files help us process data.
-
   You should look through them to understand what is happening.
   The first one is a "middleware" that is asynchronous - it loads data from PG County Open Data and passes it through to our data controllers
-
   The second one will be used in later labs: it's a way of making data controllers more legible by making them smaller
 */
 
@@ -34,7 +31,6 @@ router.use(loadFoodServiceData);
 /*
   And here we begin to set up our route methods - GET, POST, PUT and so on
   For Lab 5, you'll only be working with the `.get()` method
-
   The other methods come in later!
 */
 
