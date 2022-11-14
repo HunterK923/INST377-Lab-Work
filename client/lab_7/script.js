@@ -130,8 +130,8 @@ async function mainEvent() {
 
     form.addEventListener('input', (event) => {
       console.log('input', event.target.value);
-      currentList = filterList(currentList, event.target.value);
-      injectHTML(currentList);
+      filteredList = filterList(currentList, event.target.value);
+      injectHTML(filteredList);
     });
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
     // this is a synchronous event event, because we already did our async request above, and waited for it to resolve
